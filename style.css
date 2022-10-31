@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+
+:root {
+  --Bright-orange: hsl(31, 77%, 52%);
+  --Dark-cyan: hsl(184, 100%, 22%);
+  --Very-dark-cyan: hsl(179, 100%, 13%);
+  /* ? (paragraphs) */
+  --Transparent-white: hsla(0, 0%, 100%, 0.75);
+  /* ? (background, headings, buttons) */
+  --Very-light-gray: hsl(0, 0%, 95%);
+
+  /* ? fonts */
+
+  --lexend: "Lexend Deca", sans-serif;
+  --big-shoulder: "Big Shoulders Display", cursive;
+
+  /* ? font sizes */
+  --bg-font: 2rem;
+  --md-font: 1rem;
+  --sm-font: 0.8rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 15px;
+  font-family: var(--lexend);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+}
+
+.cards {
+  max-width: 930px;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.card_item {
+  padding: 3rem;
+}
+
+.card_item img {
+  width: 50px;
+}
+
+.card_item .title {
+  font-family: var(--big-shoulder);
+  text-transform: uppercase;
+  margin-block: 1.5rem;
+  font-weight: 700;
+  font-size: var(--bg-font);
+  color: var(--Very-light-gray);
+}
+
+.card_item .info {
+  color: var(--Transparent-white);
+  font-size: var(--sm-font);
+  line-height: 1.7;
+}
+
+.cta {
+  text-decoration: none;
+  display: inline-block;
+  background-color: var(--Very-light-gray);
+  padding: 0.8em 2em;
+  border-radius: 20px;
+}
+
+.card_item .cta {
+  margin-top: 5rem;
+  color: black;
+  mix-blend-mode: screen;
+  font-size: var(--sm-font);
+  border: 1px var(--Very-light-gray) solid;
+  transition: all 200ms ease-in;
+}
+
+.card_item .cta:hover {
+  background: transparent;
+  color: var(--Very-light-gray);
+}
+
+.card_item.--orange {
+  background-color: var(--Bright-orange);
+}
+
+.card_item.--dark-cyan {
+  background-color: var(--Dark-cyan);
+}
+
+.card_item.--very-dark-cyan {
+  background-color: var(--Very-dark-cyan);
+}
+
+@media (max-width: 785px) {
+  html {
+    font-size: 10px;
+  }
+
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card_item:nth-child(2) {
+    border-bottom-right-radius: 15px;
+  }
+  .card_item:nth-child(3) {
+    border-bottom-right-radius: 15px;
+  }
+}
+
+@media (max-width: 375px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  .card_item:nth-child(2) {
+    border-bottom-right-radius: 0;
+  }
+  .card_item:nth-child(3) {
+    border-bottom-right-radius: 0;
+  }
+}
